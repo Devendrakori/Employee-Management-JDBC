@@ -14,7 +14,7 @@ public class Client {
 		System.out.println("Welcome to Employee Management Project :-\n");
 		try {
 			while (true) {
-				System.out.println("1) Show All Employee\n2) Add Employee \n3) Update\n4) Exit");
+				System.out.println("1) Show All Employee\n2) Add Employee \n3) Update\n4) Delete\n5) Exit");
 				System.out.print("----------------------------------------------------------------\nEnter Choice : ");
 				int n = sc.nextInt();
 				System.out.print("----------------------------------------------------------------");
@@ -39,7 +39,16 @@ public class Client {
 				case 3:
 					control.update();
 					break;
-				case 4:
+				case 4:System.out.print("Enter Employee Id : ");
+					int id = sc.nextInt();
+					sc.nextLine();
+					System.out.println();
+					if(control.deleteEmployee(id)) {
+						System.out.println("Deleted...\n----------------------------------------------------------------");
+					}else
+						System.out.println("Not Deleted..\n----------------------------------------------------------------");
+					break;
+				case 5:
 					System.out.println("Thank You For Visiting !");
 					sc.close();
 					System.exit(0);

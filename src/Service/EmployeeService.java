@@ -54,7 +54,6 @@ public class EmployeeService {
 			num--;
 		}
 	}
-
 	private void updateName(int id, String name) {
 		dao = new EmployeeDao();
 		dao.updateName(id, name);
@@ -147,5 +146,10 @@ public class EmployeeService {
 				count = 0;
 			}
 		}
+	}
+	public boolean deleteEmployee(int id) {
+		dao = new EmployeeDao();
+		boolean b = dao.deleteEmployee(id);
+		return b;
 	}
 }

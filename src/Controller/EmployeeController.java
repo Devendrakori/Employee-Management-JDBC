@@ -25,4 +25,9 @@ public class EmployeeController {
 		service.update();
 		return true;
 	}
+	public boolean deleteEmployee(int id) {
+		service = new EmployeeService();
+		boolean b = service.deleteEmployee(id);
+		return b;
+	}
 }
