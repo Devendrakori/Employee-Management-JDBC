@@ -110,14 +110,14 @@ public class EmployeeDao {
 	}
 
 	public boolean deleteEmployee(int id) {
-		boolean b = false;
+		boolean b = true;
 		String query = "DELETE FROM employee WHERE Id=" + id;
 		try {
 			b = EmpUtility.createConnection(query).execute();
 			EmpUtility.closeConnection();
 		} catch (SQLException e) {
 			System.out.println("Invailid Id...");
-			return false;
+			return true;
 		}
 		return b;
 	}

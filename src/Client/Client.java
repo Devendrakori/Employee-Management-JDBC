@@ -23,8 +23,9 @@ public class Client {
 				case 1:
 					System.out.println("All Players List :-\n-------------------");
 					List<Employee> allPlayer = control.getAllEMployee();
+					System.out.printf("%-5s%-20s%-25s%-10s%-15s%-7s\n\n","Id","Name","Department","Salary","Hiring Date","Address");
 					for (Employee emp : allPlayer) {
-						System.out.printf("%-20s%-25s%-10s%-15s%-7s\n", emp.getName(), emp.getDepartment(),
+						System.out.printf("%-5d%-20s%-25s%-10s%-15s%-7s\n",emp.getId(), emp.getName(), emp.getDepartment(),
 								emp.getSalary(), emp.getHiring_date(), emp.getAddress());
 					}
 					System.out.println("----------------------------------------------------------------");
@@ -43,7 +44,7 @@ public class Client {
 					int id = sc.nextInt();
 					sc.nextLine();
 					System.out.println();
-					if(control.deleteEmployee(id)) {
+					if(!control.deleteEmployee(id)) {
 						System.out.println("Deleted...\n----------------------------------------------------------------");
 					}else
 						System.out.println("Not Deleted..\n----------------------------------------------------------------");
