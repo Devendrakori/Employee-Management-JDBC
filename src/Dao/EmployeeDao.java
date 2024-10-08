@@ -43,7 +43,7 @@ public class EmployeeDao {
 		String query = "INSERT INTO employee VALUES(?,?,?,?,?,?)";
 		try {
 //			EmpUtility.createConnectionToInsert().prepareStatement(query).execute();
-			PreparedStatement preStatement = EmpUtility.createConnectionToInsert().prepareStatement(query);
+			PreparedStatement preStatement = EmpUtility.createConnection(query);
 			preStatement.setInt(1, emp.getId());
 			preStatement.setString(2, emp.getName());
 			preStatement.setString(3, emp.getDepartment());
@@ -62,7 +62,7 @@ public class EmployeeDao {
 	public void updateName(int id, String upname) {
 		String query = "UPDATE employee SET Name ='" + upname + "' WHERE Id =" + id;
 		try {
-			EmpUtility.createConnectionToInsert().prepareStatement(query).execute();
+			EmpUtility.createConnection(query).execute();
 			EmpUtility.closeConnection();
 		} catch (SQLException e) {
 			System.out.println(e);
@@ -72,7 +72,7 @@ public class EmployeeDao {
 	public void updateDept(int id, String upDept) {
 		String query = "UPDATE employee SET Department ='" + upDept + "' WHERE Id =" + id;
 		try {
-			EmpUtility.createConnectionToInsert().prepareStatement(query).execute();
+			EmpUtility.createConnection(query).execute();
 			EmpUtility.closeConnection();
 		} catch (SQLException e) {
 			System.out.println(e);
@@ -82,7 +82,7 @@ public class EmployeeDao {
 	public void updateSalary(int id, int salary) {
 		String query = "UPDATE employee SET Salary =" + salary + " WHERE Id =" + id;
 		try {
-			EmpUtility.createConnectionToInsert().prepareStatement(query).execute();
+			EmpUtility.createConnection(query).execute();
 			EmpUtility.closeConnection();
 		} catch (SQLException e) {
 			System.out.println(e);
@@ -92,7 +92,7 @@ public class EmployeeDao {
 	public void updateHDate(int id, String date) {
 		String query = "UPDATE employee SET Hirirng_Date ='" + date + "' WHERE Id =" + id;
 		try {
-			EmpUtility.createConnectionToInsert().prepareStatement(query).execute();
+			EmpUtility.createConnection(query).execute();
 			EmpUtility.closeConnection();
 		} catch (SQLException e) {
 			System.out.println(e);
@@ -102,7 +102,7 @@ public class EmployeeDao {
 	public void updateAdd(int id, String ads) {
 		String query = "UPDATE employee SET Address ='" + ads + "' WHERE Id =" + id;
 		try {
-			EmpUtility.createConnectionToInsert().prepareStatement(query).execute();
+			EmpUtility.createConnection(query).execute();
 			EmpUtility.closeConnection();
 		} catch (SQLException e) {
 			System.out.println(e);

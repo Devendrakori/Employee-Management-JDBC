@@ -78,12 +78,12 @@ public class EmployeeService {
 		dao = new EmployeeDao();
 		dao.updateAdd(id, add);
 	}
-	public void update() {
+	public void update()throws InputMismatchException {
 		int count = 1;
 		while (count>0) {
 			System.out.print("Update :- \n");
 			System.out.println(
-					"----------------------------------------------------------------\n1) Update Name \n2) Update Department\n3) Update Salary\n4) Update Hiring Date\n5) Update Address\n6) Exit.");
+					"----------------------------------------------------------------\n1) Update Name \n2) Update Department\n3) Update Salary\n4) Update Hiring Date\n5) Update Address\n6) Back");
 			System.out.println("----------------------------------------------------------------");
 			System.out.print("Enter Choice : ");
 			int choice = sc.nextInt();

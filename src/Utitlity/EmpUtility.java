@@ -31,19 +31,6 @@ public class EmpUtility {
 		}
 		return st;
 	}
-
-	public static Connection createConnectionToInsert() {
-		try {
-			Class.forName(path);
-			con = DriverManager.getConnection(url, user, psw);
-		} catch (ClassNotFoundException e) {
-			System.out.println(e);
-		} catch (SQLException e) {
-			System.out.println(e);
-		}
-		return con;
-	}
-
 	public static void closeConnection() {
 		try {
 			if (st != null && con != null) {
